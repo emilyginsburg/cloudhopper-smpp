@@ -10,6 +10,31 @@
     <url>https://github.com/twitter/cloudhopper-smpp</url>
     <inceptionYear>2009</inceptionYear>
     
+<build>
+<plugins>
+    <plugin>
+		<groupId>org.jacoco</groupId>
+		<artifactId>jacoco-maven-plugin</artifactId>
+		<version>0.8.2</version>
+		<executions>
+			<execution>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+			</execution>
+			<!-- attached to Maven test phase -->
+			<execution>
+				<id>report</id>
+				<phase>test</phase>
+				<goals>
+					<goal>report</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+</plugins>
+</build>
+
     <scm>
         <url>https://github.com/fizzed/cloudhopper-smpp</url>
         <connection>scm:git:https://github.com/fizzed/cloudhopper-smpp.git</connection>
@@ -78,5 +103,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
 </project>
